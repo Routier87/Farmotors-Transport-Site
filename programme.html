@@ -4,13 +4,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Organisateurs - FarmOtor's Transport</title>
+<title>Programme Convoi - FarmOtor's Transport</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <header>
-<h1>Organisateurs</h1>
+<h1>Programme de Convoi</h1>
 <nav>
 <a href="index.html">Accueil</a>
 <a href="convoi.html">Convoi</a>
@@ -20,24 +20,25 @@
 </header>
 
 <section>
-<h2>L'équipe</h2>
 
-<div class="card">
-<h3>Directeur</h3>
-<p>Gestion complète de l'entreprise virtuelle.</p>
-</div>
+<label>Ville de départ</label>
+<input id="depart">
 
-<div class="card">
-<h3>Responsable Convoi</h3>
-<p>Organisation des événements et trajets.</p>
-</div>
+<label>Ville d'arrivée</label>
+<input id="arrivee">
 
-<div class="card">
-<h3>Gestion Programme</h3>
-<p>Création des programmes de convoi pour Discord.</p>
-</div>
+<label>Marchandise</label>
+<input id="cargo">
+
+<label>Date du convoi</label>
+<input id="date">
+
+<button onclick="generer()">Générer le programme</button>
+
+<div id="resultat" class="card"></div>
 
 </section>
 
+<script src="script.js"></script>
 </body>
 </html>
