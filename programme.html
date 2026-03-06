@@ -3,42 +3,26 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Programme Convoi - FarmOtor's Transport</title>
+<title>Programme Convoi</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <header>
-<h1>Programme de Convoi</h1>
-<nav>
-<a href="index.html">Accueil</a>
-<a href="convoi.html">Convoi</a>
-<a href="organisateurs.html">Organisateurs</a>
-<a href="programme.html">Programme Convoi</a>
-</nav>
+<h1>Programme Convoi</h1>
 </header>
 
 <section>
 
-<label>Ville de départ</label>
-<input id="depart">
+<input id="depart" placeholder="Ville départ">
+<input id="arrivee" placeholder="Ville arrivée">
+<input id="date" placeholder="Date">
 
-<label>Ville d'arrivée</label>
-<input id="arrivee">
-
-<label>Marchandise</label>
-<input id="cargo">
-
-<label>Date du convoi</label>
-<input id="date">
-
-<button onclick="generer()">Générer le programme</button>
-
-<div id="resultat" class="card"></div>
+<button onclick="sendConvoy()">Envoyer sur Discord</button>
 
 </section>
 
 <script src="script.js"></script>
+
 </body>
 </html>

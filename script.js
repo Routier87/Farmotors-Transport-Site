@@ -1,19 +1,47 @@
 
-function generer(){
+const api="http://localhost:3000/drivers"
 
-let depart=document.getElementById('depart')?.value
-let arrivee=document.getElementById('arrivee')?.value
-let cargo=document.getElementById('cargo')?.value
-let date=document.getElementById('date')?.value
+fetch(api)
+.then(res=>res.json())
+.then(data=>{
 
-if(document.getElementById('resultat')){
-document.getElementById('resultat').innerHTML=`
-<h3>PROGRAMME DE CONVOI</h3>
-<p><b>Départ:</b> ${depart}</p>
-<p><b>Arrivée:</b> ${arrivee}</p>
-<p><b>Marchandise:</b> ${cargo}</p>
-<p><b>Date:</b> ${date}</p>
-<p><b>Entreprise:</b> FarmOtor's Transport</p>
-`
+const container=document.getElementById("drivers")
+
+if(container){
+
+data.forEach(d=>{
+
+let div=document.createElement("div")
+div.className="driver"
+div.innerHTML=`🚛 ${d.name}`
+
+container.appendChild(div)
+
+})
+
 }
+
+})
+
+const webhook="PASTE_DISCORD_WEBHOOK"
+
+function sendConvoy(){
+
+let depart=document.getElementById("depart")?.value
+let arrivee=document.getElementById("arrivee")?.value
+let date=document.getElementById("date")?.value
+
+fetch(webhook,{
+method:"POST",
+headers:{"Content-Type":"application/json"},
+body:JSON.stringify({
+content:`🚛 **Programme Convoi - FarmOtor's Transport**
+Départ: ${depart}
+Arrivée: ${arrivee}
+Date: ${date}`
+})
+})
+
+alert("Programme envoyé sur Discord")
+
 }
