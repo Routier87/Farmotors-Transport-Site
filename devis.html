@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Devis - FarmOtor's Transport</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+<h1>Créer un devis</h1>
+<nav>
+<a href="index.html">Accueil</a>
+<a href="convoi.html">Convoi</a>
+<a href="organisateurs.html">Organisateurs</a>
+<a href="devis.html">Devis</a>
+</nav>
+</header>
+
+<section>
+
+<label>Client</label>
+<input id="client">
+
+<label>Trajet</label>
+<input id="trajet">
+
+<label>Marchandise</label>
+<input id="marchandise">
+
+<label>Prix</label>
+<input id="prix">
+
+<button onclick="generer()">Générer</button>
+
+<div id="resultat" class="card"></div>
+
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
